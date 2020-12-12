@@ -1,0 +1,63 @@
+/* 
+Animated rounde colorizied shadow
+Dark background
+Animation hover can be enable
+*/
+
+body {
+  margin: 0;
+  background: rgb(0,0,0);
+}
+
+.shadow {
+  position: relative;
+  margin: 35vh auto 0;
+  border-radius: 100%;
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(0deg, rgb(0,0,0), rgb(49, 48, 48));
+}
+
+.shadow:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background: linear-gradient(45deg, #fb0000, #0000ff);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  border-radius: 100%;
+  filter: blur(20px);
+  animation: rotate 4s normal linear infinite;
+  
+}
+
+/*
+.shadow:hover {
+  transform: scale(1);
+}
+*/
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  25% {
+    -webkit-transform: rotate3d(0, 0, 1, 90deg);
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(0, 0, 1, 180deg);
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+  75% {
+    -webkit-transform: rotate3d(0, 0, 1, 270deg);
+    transform: rotate3d(0, 0, 1, 270deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}

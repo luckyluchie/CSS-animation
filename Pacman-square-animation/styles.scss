@@ -1,0 +1,185 @@
+$primary : #000000!default;
+$secondary: #FFFF00!default;
+$third: #FFD700!default;
+
+$colorsMap: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'third': $third;
+);
+
+
+// color, bg-color, border-color
+@mixin colorUtilities($property) {
+  @each $name, $value in $colorsMap {
+    &-#{$name} {
+      #{$property}: $value;
+      @if $property == 'border-color' {
+        border-width: 2px;
+        border-style: solid;
+      }
+    }
+  }
+}
+
+.color {
+  @include colorUtilities(color);
+}
+
+.bg {
+  @include colorUtilities(background-color);
+}
+
+.border {
+  @include colorUtilities(border-color);
+}
+
+html { 
+  font-size: 2px;
+}
+
+.container-one {
+  width: 15rem;
+  height: 15rem;
+  margin-top: calc(50vh - 30rem);
+  margin-left: calc(50vw - 60rem);
+  offset-path: path('M10 10 H 180 V 180 H 10 Z'); // this is a square path 
+  animation: move 3s linear infinite;
+}
+
+.case {
+  display: inline-block;
+  position: absolute;
+  width: 1rem;
+  height: 1rem; 
+}
+
+//columns
+.col-one {
+  margin-left: 0rem;  
+}
+
+.col-two {
+  margin-left: 1rem;  
+}
+
+.col-three {
+  margin-left: 2rem;
+}
+
+.col-four {
+  margin-left: 3rem;
+}
+
+.col-five {
+  margin-left: 4rem;
+}
+
+.col-six {
+  margin-left: 5rem;
+}
+
+.col-seven {
+  margin-left: 6rem;
+}
+
+.col-eight {
+  margin-left: 7rem;
+}
+
+.col-nine {
+  margin-left: 8rem;
+}
+
+.col-ten {
+  margin-left: 9rem;
+}
+
+.col-eleven {
+  margin-left: 10rem;
+}
+
+.col-twelve {
+  margin-left: 11rem;
+}
+
+.col-thirteen {
+  margin-left: 12rem;
+}
+
+.col-fourteen {
+  margin-left: 13rem;
+}
+
+.col-fifteen {
+  margin-left: 14rem;
+}
+
+// rows
+.row-two {
+  margin-top: 1rem;
+}
+
+.row-three {
+  margin-top: 2rem;
+}
+
+.row-four {
+  margin-top: 3rem;
+}
+
+.row-five {
+  margin-top: 4rem;
+}
+
+.row-six {
+  margin-top: 5rem;
+}
+
+.row-seven {
+  margin-top: 6rem;
+}
+
+.row-eight {
+  margin-top: 7rem;
+}
+
+.row-nine {
+  margin-top: 8rem;
+}
+
+.row-ten {
+  margin-top: 9rem;
+}
+
+.row-eleven {
+  margin-top: 10rem;
+}
+
+.row-twelve {
+  margin-top: 11rem;
+}
+
+.row-thirteen {
+  margin-top: 12rem;
+}
+
+.row-fourteen {
+  margin-top: 13rem;
+}
+
+.row-fifteen {
+  margin-top: 14rem;
+}
+
+
+
+@keyframes move {
+  0% { 
+    offset-distance: 0%;
+  }
+  100% { 
+    offset-distance: 100%;
+  }
+}
+

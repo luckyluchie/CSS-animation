@@ -1,0 +1,33 @@
+/* 
+rainbow-disk with rotate animation with reverse-effect on hover
+*/
+
+body {
+  background-color: black;
+}
+
+.shadow {
+  position: relative;
+  margin: 35vh auto 0;
+  border-radius: 100%;
+  width: 250px;
+  height: 250px;
+  background: conic-gradient(#ff0000,#ffff00, #00ff00,#00ffff, #0000ff,#ff00ff,#ff0000);
+  animation: rotate 8s linear infinite;
+}
+
+.shadow:hover {
+  animation: rotate 8s linear infinite reverse;
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🦄</text></svg>") 16 0,auto;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(365deg);
+  }
+}
+

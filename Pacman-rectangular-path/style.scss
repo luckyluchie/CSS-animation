@@ -1,0 +1,39 @@
+.bg-home {
+  background-color: black;;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
+
+// Pacman animation
+.little-pacman {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-top: 5%;
+  margin-left: 5%;
+  offset-path: path('M10 10 H 400 V 180 H 10 Z'); // this is a rectangular path 
+  animation: move 8s linear infinite;
+}
+
+// Pixel animation
+.pixel {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  margin-top: 5%;
+  margin-left: 5%;
+  offset-path: path('M10 10 H 400 V 180 H 10 Z'); // this is a rectangular path 
+  animation: -0.5s move 8s linear infinite;
+}
+
+// Keyframe
+@keyframes move {
+  0% { 
+    offset-distance: 0%;
+  }
+  100% { 
+    offset-distance: 100%;
+  }
+}
